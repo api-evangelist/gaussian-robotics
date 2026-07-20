@@ -1,0 +1,33 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer-us.gs-robot.com/en_US/Openapi%20Oauth%20Service/Get%20OAuth%20Token
+docs: https://developer-us.gs-robot.com/en_US/Be%20A%20Developer%20And%20Create%20A%20Key
+summary:
+  types: [oauth2, http]
+  http_schemes: [bearer]
+  oauth2_flows: [open-access-token]
+schemes:
+- name: OAuth2OpenAccess
+  type: oauth2
+  description: >-
+    Gausium Cloud Open API OAuth 2.0 flow. Developers register in the Gausium
+    developer center to obtain a client_id, client_secret and open_access_key,
+    then exchange them for a bearer access token (with refresh_token) at the
+    token endpoint using the custom open-access grant type.
+  flows:
+  - flow: open-access-token
+    grant_type: urn:gaussian:params:oauth:grant-type:open-access-token
+    tokenUrl: https://openapi.gs-robot.com/gas/api/v1alpha1/oauth/token
+    request_content_type: application/json
+    request_params: [grant_type, client_id, client_secret, open_access_key]
+    response_fields: [token_type, access_token, expires_in, refresh_token]
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  description: >-
+    All Gausium Cloud Open API requests carry the OAuth access token in an
+    Authorization Bearer header (e.g. Authorization: Bearer {access_token}).
+  applied_to: all Gausium Cloud Open API endpoints (openapi.gs-robot.com)
+credentials:
+  obtained_at: https://service.gs-robot.com/developer
+  fields: [client_id, client_secret, open_access_key]
