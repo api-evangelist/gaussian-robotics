@@ -1,0 +1,25 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer-us.gs-robot.com/en_US/Release%20Notes
+versioning:
+  scheme: uri-path
+  versions: [v1alpha1, v2]
+  current: v2
+  docs: https://developer-us.gs-robot.com/en_US/General%20Introduction
+  note: >-
+    Alpha-tagged path prefixes (v1alpha1) coexist with newer v2 endpoints.
+    New capabilities are announced through dated developer release notes.
+deprecation:
+  policy: >-
+    Endpoint deprecations are announced in the dated developer release notes as
+    superseding v2 endpoints ship; no formal Sunset/Deprecation HTTP-header
+    policy (RFC 8594) is documented.
+  changelog_url: https://developer-us.gs-robot.com/en_US/Release%20Notes
+deprecated_operations:
+- endpoint: original temporary-task APIs
+  deprecated_on: '2025-11-04'
+  superseded_by: /openapi/v2/robot/tasks/temp/withSite, /openapi/v2/robot/tasks/temp/withoutSite
+sla:
+  url: null
+  note: No public SLA / uptime commitment found.
+status_page: null

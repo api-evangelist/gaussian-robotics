@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer-us.gs-robot.com/en_US/Robot%20Information%20Service/List%20Robots
+note: >-
+  Cross-cutting request/response semantics for the Gausium Cloud Open API,
+  captured from the developer documentation. Cross-links authentication/ for the
+  OAuth model and lifecycle/ for versioning and deprecation.
+authentication:
+  style: oauth2-bearer
+  header: 'Authorization: Bearer {access_token}'
+  ref: authentication/gaussian-robotics-authentication.yml
+versioning:
+  style: uri-path
+  examples: [/v1alpha1/robots, /openapi/v2/robot/tasks/temp/withSite]
+  ref: lifecycle/gaussian-robotics-lifecycle.yml
+pagination:
+  style: page-number
+  request_params: [page, pageSize]
+  response_fields: [page, pageSize, total]
+  example: /v1alpha1/robots?page=1&pageSize=10&relation=contract
+filtering:
+  params: [relation]
+  note: e.g. relation=contract to scope robots by bound relationship
+idempotency:
+  supported: false
+  note: No idempotency-key header/parameter is documented for the Gausium Cloud Open API.
+error_envelope:
+  note: >-
+    Error-response shape is not fully documented in the public developer docs;
+    not captured to avoid fabrication.
+rate_limiting:
+  note: No public rate-limit signaling (headers/policy) documented.

@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: searched
+note: >-
+  Probed the /.well-known/ discovery surface on the API host, developer docs
+  hosts, and marketing sites. No discovery documents were served (200): the API
+  host returns 415 for GET on these paths and the docs/marketing hosts return
+  404/400. Recorded as evidence; no WellKnown catalog pointer is wired because no
+  document was found.
+hosts:
+- host: https://openapi.gs-robot.com
+  documents:
+  - {path: /.well-known/security.txt, status: 415}
+  - {path: /.well-known/openid-configuration, status: 415}
+  - {path: /.well-known/oauth-authorization-server, status: 415}
+  - {path: /.well-known/api-catalog, status: 415}
+  - {path: /.well-known/ai-plugin.json, status: 415}
+- host: https://developer-us.gs-robot.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://gausium.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}

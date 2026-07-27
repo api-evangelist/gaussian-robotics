@@ -1,0 +1,50 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer-us.gs-robot.com/en_US/Release%20Notes
+scheme: dated-release-notes
+current_version: v2 (with v1alpha1 endpoints still in service)
+note: >-
+  Gausium versions the Cloud Open API with alpha-tagged path prefixes
+  (v1alpha1) alongside newer v2 endpoints, and publishes dated developer
+  release notes. Recent window captured below.
+entries:
+- date: '2026-07-14'
+  additions: true
+  breaking: false
+  highlights: Added task-report original-image query via POST /openapi-server/v1/api/task/report/map-images/query
+- date: '2026-04-27'
+  additions: true
+  breaking: false
+  highlights: Robot status APIs now return latestReportTime; V1 task reports gained taskEndStatus parameter
+- date: '2026-04-07'
+  additions: true
+  breaking: false
+  highlights: V1 List Robot Task Reports (/v1alpha1/robots/{robot}/taskReports) now includes planId
+- date: '2025-11-04'
+  additions: true
+  breaking: true
+  highlights: Introduced v2 temporary-task endpoints (/openapi/v2/robot/tasks/temp/withSite and /withoutSite); deprecated the original temporary-task APIs
+- date: '2025-09-27'
+  additions: true
+  breaking: false
+  highlights: Robot list interface (/v1alpha1/robots) now exposes hardwareVersion
+- date: '2025-08-28'
+  additions: true
+  breaking: false
+  highlights: Battery parameters added to status endpoints; planRunningTime added to task reports
+- date: '2025-08-14'
+  additions: true
+  breaking: false
+  highlights: Robot list enhanced for bound-relationship queries; permission logic and push-scope adjustments
+- date: '2025-08-12'
+  additions: true
+  breaking: false
+  highlights: Elevator Control System Interface Protocol V1.5 (new status upload interface, robotSn parameter)
+- date: '2025-04-10'
+  additions: true
+  breaking: false
+  highlights: Elevator Control System Interface Protocol V1.4 (multiple elevator-management endpoints)
+- date: '2025-03-28'
+  additions: true
+  breaking: false
+  highlights: Event/task-report push services enhanced with navigation/partition info; status queries gained navigation and elevator-control fields

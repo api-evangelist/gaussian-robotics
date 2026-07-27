@@ -1,8 +1,27 @@
 aid: gaussian-robotics
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/gaussian-robotics.png
 name: Gaussian Robotics
-description: 'Gaussian Robotics is a company surfaced as a portfolio company of softbank-vision-fund and
-  added to the API Evangelist network as a stub for enrichment. Sector: frontier-tech. This profile is
-  a lead awaiting the enrichment pipeline.'
+description: 'Gaussian Robotics (Gausium) is an autonomous cleaning and service robotics
+  company founded in 2013 and headquartered in Shanghai, with more than 6,500 customers
+  across 70+ countries. Its commercial floor-care and delivery robots (Scrubber 50/75,
+  Phantas, Beetle, Omnie, Vacuum 40) are built on AI, 3D LiDAR and SLAM navigation.
+  Gausium publishes a public developer platform and the Gausium Cloud Open API
+  (openapi.gs-robot.com), a REST API secured with OAuth 2.0 bearer tokens that lets
+  facilities and partners list robots, query robot status and task reports, retrieve
+  maps and subareas, issue robot commands, dispatch temporary cleaning tasks, and
+  integrate the fleet with building IoT and elevator-control systems.'
 url: https://raw.githubusercontent.com/api-evangelist/gaussian-robotics/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,13 +31,84 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Frontier Tech
-apis: []
+- Robotics
+- Autonomous Robots
+- Cleaning Robots
+- IoT
+- Fleet Management
+- Robot Operations
+apis:
+- name: Gausium Cloud Open API
+  description: 'REST API for the Gausium Cloud platform. Authenticated with OAuth 2.0
+    bearer tokens (custom open-access grant), it exposes robot information, robot
+    status, task reports, robot maps and subareas, robot commands, temporary task
+    dispatch (with/without site), and elevator-control integration for a fleet of
+    Gausium autonomous cleaning and delivery robots.'
+  humanURL: https://developer-us.gs-robot.com/en_US/General%20Introduction
+  baseURL: https://openapi.gs-robot.com
+  tags:
+  - Robotics
+  - Fleet Management
+  - IoT
+  properties:
+  - type: Authentication
+    url: authentication/gaussian-robotics-authentication.yml
+  - type: Conventions
+    url: conventions/gaussian-robotics-conventions.yml
+  - type: Conformance
+    url: conformance/gaussian-robotics-conformance.yml
+common:
+- type: DeveloperPortal
+  url: https://developer-us.gs-robot.com/
+- type: Documentation
+  url: https://developer-us.gs-robot.com/en_US/General%20Introduction
+- type: APIReference
+  url: https://developer-us.gs-robot.com/en_US/Robot%20Information%20Service/List%20Robots
+- type: GettingStarted
+  url: https://developer-us.gs-robot.com/en_US/Be%20A%20Developer%20And%20Create%20A%20Key
+- type: SignUp
+  url: https://service.gs-robot.com/developer
+- type: Blog
+  url: https://gausium.com/blog/
+- type: PrivacyPolicy
+  url: https://gausium.com/privacy-policy/
+- type: TermsOfService
+  url: https://gausium.com/terms-of-use/
+- type: Support
+  url: https://gausium.com/contact/
+- type: Website
+  url: https://gausium.com/
+- type: ChangeLog
+  url: https://developer-us.gs-robot.com/en_US/Release%20Notes
+- type: MCPServer
+  url: mcp/gaussian-robotics-mcp.yml
+- type: LLMsTxt
+  url: llms/gaussian-robotics-llms.txt
+- type: Authentication
+  url: authentication/gaussian-robotics-authentication.yml
+- type: Conventions
+  url: conventions/gaussian-robotics-conventions.yml
+- type: Conformance
+  url: conformance/gaussian-robotics-conformance.yml
+- type: Lifecycle
+  url: lifecycle/gaussian-robotics-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/gaussian-robotics-lifecycle.yml
+- type: ChangeLog
+  url: changelog/gaussian-robotics-changelog.yml
+- type: DomainSecurity
+  url: security/gaussian-robotics-domain-security.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
