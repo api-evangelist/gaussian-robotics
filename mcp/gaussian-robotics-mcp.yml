@@ -3,15 +3,12 @@ method: searched
 status: third-party
 status_raw: community
 source: https://github.com/cfrs2005/mcp-gs-robot
-note: >-
-  No first-party Gausium-hosted MCP server was found. The substantive MCP server
-  for the Gausium Cloud Open API is a community project (cfrs2005/mcp-gs-robot),
-  published on PyPI as mcp-gs-robot and hosted on Smithery. It wraps the Gausium
-  robot OpenAPI (openapi.gs-robot.com) and authenticates with the developer's own
-  GS_CLIENT_ID / GS_CLIENT_SECRET / GS_OPEN_ACCESS_KEY credentials. Separately,
-  the Gausium marketing site (gaussianrobotics.com) exposes a generic Wix Site
-  MCP endpoint for public site-content queries (no auth), unrelated to robot
-  control.
+note: No first-party Gausium-hosted MCP server was found. The substantive MCP server for the Gausium Cloud
+  Open API is a community project (cfrs2005/mcp-gs-robot), published on PyPI as mcp-gs-robot and hosted
+  on Smithery. It wraps the Gausium robot OpenAPI (openapi.gs-robot.com) and authenticates with the developer's
+  own GS_CLIENT_ID / GS_CLIENT_SECRET / GS_OPEN_ACCESS_KEY credentials. Separately, the Gausium marketing
+  site (gaussianrobotics.com) exposes a generic Wix Site MCP endpoint for public site-content queries
+  (no auth), unrelated to robot control.
 servers:
 - name: mcp-gs-robot
   official: false
@@ -21,7 +18,10 @@ servers:
   package_url: https://pypi.org/project/mcp-gs-robot/
   repo: https://github.com/cfrs2005/mcp-gs-robot
   smithery: https://smithery.ai/server/@cfrs2005/mcp-gs-robot
-  auth_env: [GS_CLIENT_ID, GS_CLIENT_SECRET, GS_OPEN_ACCESS_KEY]
+  auth_env:
+  - GS_CLIENT_ID
+  - GS_CLIENT_SECRET
+  - GS_OPEN_ACCESS_KEY
   wraps_api: https://openapi.gs-robot.com
   tools:
   - name: list_robots
@@ -52,7 +52,11 @@ servers:
   transport: http
   url: https://www.gaussianrobotics.com/_api/mcp
   auth: none
-  description: >-
-    Wix-generated Site MCP for public marketing-site content (business details,
-    site search, API docs). Not the robot-control API.
+  description: Wix-generated Site MCP for public marketing-site content (business details, site search,
+    API docs). Not the robot-control API.
   source: https://www.gaussianrobotics.com/llms.txt
+deployment:
+  mode: third-party
+  verified: searched
+  checked: '2026-08-12'
+  source: catalog MCP census
